@@ -11,13 +11,11 @@ return (
                     <div className="navbar-item">
                         <button className="btn btn-danger" data-bs-toggle="modal" data-bs-target="#new-prediction-modal"> New Prediction </button>
                     </div>
-                    <div className="navbar-item">
-                        <button className="btn btn-danger"> Change format </button>
-                    </div>
+                    
                 </div>
             </div>
         </header>
-        <div className="modal fade" id="new-prediction-modal" tabindex="-1" aria-labelledby="new-prediction-label" aria-hidden="true"> 
+        <div className="modal fade" id="new-prediction-modal" tabIndex="-1" aria-labelledby="new-prediction-label" aria-hidden="true"> 
            <div className="modal-dialog">
                  <div className="modal-content">
                     <div className="modal-header">
