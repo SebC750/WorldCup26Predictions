@@ -3,6 +3,15 @@
     padding-top: 20px;
     
 }
+.bracket-table .group-stage{
+    margin-right: 50px;
+}
+.bracket-table .knockout-out-stage{
+    margin-right: 50px;
+}
 .knockout-out-stage{
     margin-left: 20px;
+}
+.settings-buttons{
+    margin-left: 43%;
 }
