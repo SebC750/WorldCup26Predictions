@@ -5,10 +5,10 @@ import Navbar from "./Navbar.jsx"
 import LegendTable from "./LegendTable.jsx"
 import BracketTable from "./BracketTable.jsx"
 function App() {
-
-
+  
   return (
-    <>
+    <div className="bg">
+      <div className="content">
       <Navbar />
       <div className="intro">
         <h1> Welcome to the World Cup Prediction Bracket!</h1>
@@ -16,8 +16,10 @@ function App() {
       </div>
 
       <LegendTable />
-      <BracketTable />
-    </>
+      <BracketTable/>
+      </div>
+      
+    </div>
   )
 }
 

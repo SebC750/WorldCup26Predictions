@@ -6,6 +6,21 @@ const Bracket = ({ groupname, titlecolor, teams }) => {
     const [teamList, updateTeams] = useState(teams)
     const [selectedTeam, setSelectedTeam] = useState(null)
     const [num_of_teams, updateNum_of_teams] = useState(0)
+
+    const addTeam = () =>{
+        
+        if (selectedTeam && !teamList.includes(selectedTeam.country)) {
+            const newTeamList = [...teamList, selectedTeam.country];
+            updateTeams(newTeamList);
+            updateNum_of_teams(newTeamList.length);
+            setSelectedTeam(null);
+        }
+    }
+    const removeCountry = (country) => {
+        const newTeamList = teamList.filter(team => team !== country);
+        updateTeams(newTeamList);
+        updateNum_of_teams(newTeamList.length);
+    };
     return (
         <div>
             <div className="bracket-card">
@@ -38,7 +53,7 @@ const Bracket = ({ groupname, titlecolor, teams }) => {
 
                                     <tr key={index}>
 
-                                        <td> <span className={`fi fi-${val.toLowerCase().replace(' ', '-')}`}></span></td>
+                                        <td> <span className={`fi fi-${val.toLowerCase().replace(' ', '-')}`} style={{fontSize: "2em"}}></span></td>
                                         <td>0</td>
                                         <td>0</td>
                                         <td>0</td>
@@ -47,7 +62,7 @@ const Bracket = ({ groupname, titlecolor, teams }) => {
                                         <td>0</td>
                                         <td>0</td>
                                         <td>0</td>
-                                        <td> <div className="btn btn-danger"> Remove </div></td>
+                                        <td> <div className="btn btn-danger" onClick={() => removeCountry(val)}> Remove </div></td>
                                     </tr>
 
                                 ))
@@ -58,7 +73,7 @@ const Bracket = ({ groupname, titlecolor, teams }) => {
 
 
 
-                                {num_of_teams < 3? (
+                                {num_of_teams < 4? (
                                     <div className="btn btn-danger" data-bs-toggle="modal" data-bs-target="#add-country-modal"> Add team</div>
                                 ) : null}
                             </tbody>
@@ -84,7 +99,7 @@ const Bracket = ({ groupname, titlecolor, teams }) => {
                                     {countries.map((val, index) =>
                                         <div className="country-option" key={index} onClick={() => setSelectedTeam({country: val.country, name: val.name})}>
                                             <span> {val.name} </span>
-                                            <span className={`fi fi-${val.country.toLowerCase().replace(' ', '-')}`}> </span>
+                                            <span className={`fi fi-${val.country.toLowerCase().replace(' ', '-')}`} style={{fontSize: '2em'}}> </span>
                                         </div>
                                     )}
 
@@ -92,7 +107,7 @@ const Bracket = ({ groupname, titlecolor, teams }) => {
                             </div>
                             <div className="modal-footer">
                                 <button className="btn btn-danger" data-bs-dismiss="modal"> Close </button>
-                                <button className="btn btn-danger" data-bs-dismiss="modal"> Add country </button>
+                                <button className="btn btn-danger" data-bs-dismiss="modal" onClick={() => addTeam()}> Add country </button>
                             </div>
 
                         </div>

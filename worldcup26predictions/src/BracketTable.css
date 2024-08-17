@@ -1,4 +1,8 @@
 .bracket-table{
     display: flex;
     padding-top: 20px;
+    
+}
+.knockout-out-stage{
+    margin-left: 20px;
 }
