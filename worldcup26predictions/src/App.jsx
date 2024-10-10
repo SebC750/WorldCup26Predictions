@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
 import './App.css'
-import Navbar from "./Navbar.jsx"
-import LegendTable from "./LegendTable.jsx"
-import BracketTable from "./BracketTable.jsx"
+import Navbar from "./Components/Navbar.jsx"
+import LegendTable from "./Components/LegendTable.jsx"
+import BracketTable from "./Components/BracketTable.jsx"
 function App() {
   
   return (

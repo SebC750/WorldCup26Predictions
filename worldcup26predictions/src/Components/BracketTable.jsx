@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Bracket from "./Bracket.jsx";
-import "./BracketTable.css";
-import countries from './teamflag.json';
+import "../Styles/BracketTable.css";
+import countries from '../teamflag.json';
 const BracketTable = () => {
     const [qualifyingCountries, updateQualifyingCountries] = useState([]);
     const [selectedTeam, setSelectedTeam] = useState(null);
     const [format, setFormat] = useState('');
-    
+
     const [brackets, setBrackets] = useState([
         { groupname: 'A', titlecolor: '#1E90FF', teams: [] },
         { groupname: 'B', titlecolor: '#32CD32', teams: [] },
@@ -23,8 +23,8 @@ const BracketTable = () => {
     ]);
 
     const handleAddTeam = (groupname, country) => {
-        console.log("Group name:",groupname)
-        console.log("Group name:",country)
+        console.log("Group name:", groupname)
+        console.log("Group name:", country)
         setBrackets(prevBrackets =>
             prevBrackets.map(bracket =>
                 bracket.groupname === groupname ?
@@ -45,7 +45,7 @@ const BracketTable = () => {
     };
 
     return (
-        <div>
+        <div className="container">
             <div className="settings-buttons">
                 <div className="btn-group">
                     <button type="button" className="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -90,9 +90,9 @@ const BracketTable = () => {
                         {brackets && (
                             <div>
                                 {brackets.slice(0, 8).map((val, index) => (
-                                    
+
                                     <div>
-{console.log("Bracket stages: ", val.groupname)}
+                                        {console.log("Bracket stages: ", val.groupname)}
                                         <Bracket
                                             key={index}
                                             groupname={val.groupname}

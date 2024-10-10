@@ -1,4 +1,4 @@
-import "./Bracket.css";
+import "../Styles/Bracket.css";
 
 import { useState, useEffect } from "react";
 

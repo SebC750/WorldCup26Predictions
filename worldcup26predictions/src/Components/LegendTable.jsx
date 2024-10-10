@@ -1,4 +1,4 @@
-import "./legend.css"
+import "../Styles/legend.css"
 const LegendTable = () => {
     return (
         <div>

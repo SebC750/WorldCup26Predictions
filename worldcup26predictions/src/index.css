@@ -29,5 +29,8 @@ html, body {
   height: 100%;
   width: 100%;
   background-image: url("./Soccer_Field_Transparant.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 

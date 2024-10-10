@@ -1,4 +1,4 @@
-import "./Navbar.css"
+import "../Styles/Navbar.css"
 import { useState } from "react"
 const Navbar = () => {
     const [format, setFormat] = useState('')
